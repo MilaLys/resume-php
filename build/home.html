@@ -1,0 +1,474 @@
+<!-- Content -->
+<main class="container-fluid">
+    <div class="row">
+        <!-- Navigation -->
+        <nav class="menu" id="menu">
+            <ul class="list-unstyled text-center menu-items" role="tablist">
+                <li class="hidden-xxs">
+                    <a data-ui-sref="home">
+                        <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">about</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('portfolio')">
+                        <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">portfolio</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('experience')">
+                        <i class="fa fa-building-o fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">work experience</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('skills')">
+                        <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">skills</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('resume')">
+                        <i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">resume</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('education')">
+                        <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">education</div>
+                    </a>
+                </li>
+                <li>
+                    <a data-ui-sref="blog">
+                        <i class="fa fa-rss fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">blog</div>
+                    </a>
+                </li>
+                <li class="hidden-xxs">
+                    <a data-ng-click="vm.scrollTo('contacts')">
+                        <i class="fa fa-address-card-o fa-2x" aria-hidden="true"></i>
+                        <div class="item-text text-uppercase">contacts</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <!--ABOUT ME-->
+                <section class="row about-me text-center" id="about-me">
+                    <div class="col-lg-6 col-lg-offset-3 col-sm-12">
+                        <h3 class="text-uppercase">
+                            <strong>about me</strong>
+                        </h3>
+                        <p>
+                            Here is a short information about me. If you want to find out more about me, please feel free to contact with me.
+                            Here is a short information about me. If you want to find out more about me, please feel free to contact with me.
+                            Here is a short information about me. If you want to find out more about me, please feel free to contact with me.
+                        </p>
+                        <ul class="list-unstyled list-inline text-center">
+                            <li class="about-me-block">
+                                <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>name</strong>
+                                </h5>
+                                <p>Liudmila Lysenko</p>
+                            </li>
+                            <li class="about-me-block">
+                                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>date of birth</strong>
+                                </h5>
+                                <p>23d June, 1985</p>
+                            </li>
+                            <li class="about-me-block">
+                                <i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>occupation</strong>
+                                </h5>
+                                <p>Front-End Developer</p>
+                            </li>
+                            <li class="about-me-block">
+                                <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>my location</strong>
+                                </h5>
+                                <p>Ukraine, Kharkov</p>
+                            </li>
+                            <li class="about-me-block">
+                                <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>E-mail</strong>
+                                </h5>
+                                <p>
+                                    <a data-href="mailto:lysenko.liudmila.a@gmail.com">lysenko.liudmila.a@gmail.com</a>
+                                </p>
+                            </li>
+                            <li class="about-me-block">
+                                <i class="fa fa-skype fa-2x" aria-hidden="true"></i>
+                                <h5 class="text-uppercase">
+                                    <strong>Skype</strong>
+                                </h5>
+                                <p>
+                                    <a data-href="skype:llysenko23?chat">llysenko23</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- PORTFOLIO -->
+                <section class="row portfolio text-center bg-grey" id="portfolio">
+                    <div class="col-lg-10 col-lg-offset-1 col-sm-12">
+                        <h3 class="text-uppercase">
+                            <strong>portfolio</strong>
+                        </h3>
+                        <p>Here is some of my work. You can learn more about it if click on one of them.</p>
+                        <ul class="list-unstyled list-inline portfolio-items">
+                            <li class="portfolio-item"
+                                data-ng-repeat="item in vm.portfolio | limitTo:vm.limitPortfolio"
+                                data-ng-style="{'background-image' : 'url(' + item.banner + ')'}"
+                            >
+                                <div class="back animated zoomIn">
+                                    <div class="back-content">
+                                        <h4 class="text-uppercase">
+                                            <strong data-ng-bind="item.title"></strong>
+                                        </h4>
+                                        <ul class="techs-list list-unstyled text-left">
+                                            <li>
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                <span data-ng-bind="item.description"></span>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                                                <span data-ng-bind="item.technologies"></span>
+                                            </li>
+                                        </ul>
+                                        <a class="hvr-shutter-in-vertical my-btn" data-ng-href="{{ item.url }}" target="_blank">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- PAGINATION -->
+                        <nav>
+                            <ul class="pager">
+                                <li>
+                                    <button class="hvr-shutter-in-vertical my-btn">Prev</button>
+                                </li>
+                                <li>
+                                    <button class="hvr-shutter-in-vertical my-btn">Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+
+                <!-- WORK EXPERIENCE -->
+                <section class="row experience" id="experience">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="text-uppercase">
+                                    <strong>work experience</strong>
+                                </h3>
+                                <p>Because before I worked in other areas, here I show only relevant experience in IT-area.</p>
+                                <button class="hvr-shutter-in-vertical my-btn" onclick='window.open("https://www.linkedin.com/in/milalysenko", "_blank");'>view on linkedin</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="work-chronology-wrapper">
+                                    <ul class="work-chronology list-unstyled">
+                                        <li>
+                                            <h4 class="year text-capitalize">present</h4>
+                                            <ul class="inner list-unstyled">
+                                                <li>
+                                                    <div>
+                                                        <h4 class="text-uppercase">
+                                                            <strong>dFusion Tech.</strong>
+                                                        </h4>
+                                                        <a href="http://dfusiontech.com" target="_blank">www.dfusiontech.com</a>
+                                                        <p>Front-End Developer</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4 class="year text-capitalize">june 2016</h4>
+                                            <ul class="inner list-unstyled">
+                                                <li>
+                                                    <div>
+                                                        <h4 class="text-uppercase">
+                                                            <strong>bugsex.net</strong>
+                                                        </h4>
+                                                        <a href="http://bugsex.net/" target="_blank">www.bugsex.net</a>
+                                                        <p>Front-End Developer, UI/UX Designer</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h4 class="year text-capitalize">2014</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr/>
+
+                <!--SKILLS-->
+                <section class="row skills" id="skills">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="text-uppercase">
+                                    <strong>my skills</strong>
+                                </h3>
+                                <p>This is just mine subjective opinion. Yours can be better or worse. If you want to see, please feel free to contact with me.</p>
+                                <button class="hvr-shutter-in-vertical my-btn" onclick="window.location.href='#contacts';">contact me</button>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <form action="#">
+                                    <h4>HTML5</h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                    </div>
+
+                                    <h4>CSS3</h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                    </div>
+                                    <h4>Java Script</h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                    </div>
+                                    <h4>AngularJS 1</h4>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                             <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="headingOne">
+                                     <h4 class="panel-title">
+                                         <i class="fa fa-desktop" aria-hidden="true"></i>
+                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                             CSS Preprocessors
+                                         </a>
+                                     </h4>
+                                 </div>
+                                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                     <div class="panel-body">
+                                         <ul class="collection">
+                                             <li class="collection-item">LESS</li>
+                                             <li class="collection-item">SASS</li>
+                                             <li class="collection-item">SCSS</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="headingTwo">
+                                     <h4 class="panel-title">
+                                         <i class="fa fa-book" aria-hidden="true"></i>
+                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                             CSS Libraries
+                                         </a>
+                                     </h4>
+                                 </div>
+                                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                     <div class="panel-body">
+                                         <ul class="collection">
+                                             <li class="collection-item">Bootstrap</li>
+                                             <li class="collection-item">Materialize</li>
+                                             <li class="collection-item">Bootstrap-material-design</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="headingThree">
+                                     <h4 class="panel-title">
+                                         <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                             JS Libraries &amp; Frameworks
+                                         </a>
+                                     </h4>
+                                 </div>
+                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                     <div class="panel-body">
+                                         <ul class="collection">
+                                             <li class="collection-item">jQuery</li>
+                                             <li class="collection-item">jQueryUI</li>
+                                             <li class="collection-item">Angular 1</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="toolsHeading">
+                                     <h4 class="panel-title">
+                                         <i class="fa fa-cogs" aria-hidden="true"></i>
+                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#toolsCollapse" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                             Apps &amp; Tools
+                                         </a>
+                                     </h4>
+                                 </div>
+                                 <div id="toolsCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                     <div class="panel-body">
+                                         <ul class="collection">
+                                             <li class="collection-item">VCS - SVN, GIT</li>
+                                             <li class="collection-item">Graphic editors - Adobe Photoshop, Adobe Illustartor, Avocode</li>
+                                             <li class="collection-item">IDE - Netbeans, phpStorm</li>
+                                             <li class="collection-item">The streaming build systems - Gulp, Grunt</li>
+                                             <li class="collection-item">Package managers - Bower, npm</li>
+                                             <li class="collection-item">Scaffolding tools - Yeoman</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="langHeading">
+                                     <h4 class="panel-title">
+                                         <i class="fa fa-globe" aria-hidden="true"></i>
+                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#langCollapse" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                             Languages
+                                         </a>
+                                     </h4>
+                                 </div>
+                                 <div id="langCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                     <div class="panel-body">
+                                         <ul class="collection">
+                                             <li class="collection-item">Russian - native</li>
+                                             <li class="collection-item">Ukrainian - native</li>
+                                             <li class="collection-item">English - intermediate</li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>-->
+                        <uib-accordion close-others="oneAtATime">
+                            <div uib-accordion-group class="panel-default" data-ng-repeat="group in vm.skills"><!--is-open="status.open"-->
+                                <uib-accordion-heading class="panel-title">
+                                    <i class="fa {{group.icon}}" aria-hidden="true"></i>
+                                    <span>{{group.title}}</span>
+                                </uib-accordion-heading>
+                                <ul class="collection">
+                                    <li class="collection-item" data-ng-repeat="item in group.content track by $index">{{ item }}</li>
+                                </ul>
+                            </div>
+                        </uib-accordion>
+                    </div>
+                </section>
+
+                <!--RESUME-->
+                <section class="row resume text-center" id="resume">
+                    <div class="">
+                        <div class="col-lg-12">
+                            <h3 class="text-uppercase">
+                                <strong>resume</strong>
+                            </h3>
+                            <p>You can download my CV if you need, just press button below.</p>
+                            <button class="hvr-shutter-in-vertical my-btn" onclick='window.open("../images/cv.pdf", "_blank");'>download resume</button>
+                        </div>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </section>
+
+                <!--MY EDUCATION-->
+                <section class="row education" id="education">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="row">
+                            <div class="col-lg-6 column">
+                                <h3 class="text-uppercase">
+                                    <strong>my education</strong>
+                                </h3>
+                                <p>
+                                    Of course, I graduated a school too and always had only the best marks.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="institute">
+                                    <h4 class="text-uppercase">
+                                        <strong>Izyum medical college</strong>
+                                    </h4>
+                                    <p class="info">
+                                        2000 - 2004
+                                        <span class="badge pull-right">4.5 GPA</span>
+                                    </p>
+                                    <hr/>
+                                    <p>Paramedic.</p>
+                                </div>
+
+                                <div class="institute">
+                                    <h4 class="text-uppercase">
+                                        <strong>Kharkov national medical university</strong>
+                                    </h4>
+                                    <p class="info">
+                                        2004 - 2011
+                                        <span class="badge pull-right">4.5 GPA</span>
+                                    </p>
+                                    <hr/>
+                                    <p>Course of Medical-preventive medicine.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BLOG -->
+                <section class="row blog bg-grey" id="blog">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <h3 class="text-uppercase text-center">
+                            <strong>Latest in my blog</strong>
+                        </h3>
+                        <p class="text-center">
+                            Here are you can see my own researches and visions, my opinion for some interesting for me things and also a lot of articles translated from english
+                            to russian for people who prefer read on it.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12" data-ng-repeat="item in vm.articles">
+                                <div class="blog-item">
+                                    <div class="blog-picture"></div>
+                                    <h4>
+                                        <strong>{{ item.title }}</strong>
+                                    </h4>
+                                    <div class="details">
+                                        <span tooltip-placement="top" uib-tooltip="Publication Date">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            {{ item.date }}
+                                        </span>
+                                        <span tooltip-placement="top" uib-tooltip="Watched">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                           {{ item.watched }}
+                                        </span>
+                                        <span tooltip-placement="top" uib-tooltip="Liked by">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                           {{ item.liked }}
+                                        </span>
+                                    </div>
+                                    <hr/>
+                                    <p class="description">
+                                        {{ item.description }}
+                                    </p>
+                                    <button class="hvr-shutter-in-vertical my-btn" data-ui-sref="article({id: item.id})">read article</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>

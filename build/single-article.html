@@ -1,0 +1,145 @@
+<!-- Content -->
+<main id="blog">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Navigation -->
+            <nav class="menu" id="menu">
+                <ul class="list-unstyled text-center menu-items" role="tablist">
+                    <li>
+                        <a data-ui-sref="home">
+                            <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                            <div class="item-text text-uppercase">home</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-ui-sref="blog">
+                            <i class="fa fa-rss fa-2x" aria-hidden="true"></i>
+                            <div class="item-text text-uppercase">blog</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-ng-click="vm.scrollTo('contacts')">
+                            <i class="fa fa-address-card-o fa-2x" aria-hidden="true"></i>
+                            <div class="item-text text-uppercase">contacts</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row parallax"></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="article single-article">
+                        <div class="article-details">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                                    <div class="article-date text-center">
+                                        <div>{{ vm.article.date }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+                                    <ul class="article-info list-unstyled list-inline">
+                                        <li tooltip-placement="top" uib-tooltip="Category">cat:
+                                            <span class="text-capitalize category">web, design</span>
+                                        </li>
+                                        <li tooltip-placement="top" uib-tooltip="Watched">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            {{ vm.article.watched }}
+                                            <span class="hidden-xs">Watched</span>
+                                        </li>
+                                        <li tooltip-placement="top" uib-tooltip="Liked by">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                            {{ vm.article.liked }}
+                                            <span class="hidden-xs">Liked</span>
+                                        </li>
+                                    </ul>
+                                    <div class="article-description">
+                                        <h3>
+                                            <strong data-ng-bind="vm.article.title"></strong>
+                                        </h3>
+                                        <p data-ng-bind="vm.article.text"></p>
+                                    </div>
+
+                                    <ul class="list-unstyled list-inline tags">
+                                        <li>
+                                            <h4>
+                                                <strong class="text-uppercase">tags</strong>
+                                            </h4>
+                                        </li>
+                                        <li>
+                                            <ul class="list-unstyled list-inline tags-item">
+                                                <li data-ng-repeat="n in [1,2,3]">front-end</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h4>
+                        <strong class="text-capitalize">21 comments</strong>
+                    </h4>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <button class="hvr-shutter-in-vertical my-btn pull-right">load more</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Post a comment -->
+                    <div class="post-comment">
+                        <h3 class="text-center">
+                            <strong class="text-capitalize">post a comment</strong>
+                        </h3>
+                        <form class="post-form" name="postForm">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                                    <p class="text-right">
+                                        <strong>Use your real name</strong>
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <input id="name" type="text" class="form-control post-form-control" placeholder="Name">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <input id="email" type="email" class="form-control post-form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                                    <p>
+                                        <strong>Email will not published</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+                                    <p class="text-right">
+                                        <strong>Write a good comment</strong>
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <textarea id="message" class="post-form-control" rows="6" placeholder="Comments"></textarea>
+                                    <button class="hvr-shutter-in-vertical my-btn pull-right btn-block">post</button>
+                                </div>
+                                <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

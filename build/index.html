@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="resumeApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
+    <!--  Vendors -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css"/>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <title>Lysenko Liudmila Resume</title>
+
+</head>
+<body data-spy="scroll" data-target="#menu" data-ng-controller="ResumeController">
+
+<ui-view></ui-view>
+
+<div class="container-fluid">
+    <div class="content">
+        <!-- CONTACTS -->
+
+        <div class="row bg-dark-grey">
+            <section class="contacts" id="contacts">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3 class="text-uppercase">
+                                <strong>contact me</strong>
+                            </h3>
+                            <p>I will answer for your questions with pleasure. So feel free to contact with me.</p>
+
+                            <address>
+                                <ul class="list-unstyled">
+                                    <li>
+                                <span>
+                                    <strong>Kharkov, Ukraine</strong>
+                                </span>
+                                    </li>
+                                    <li>
+                                        <span>Email: </span>
+                                        <a data-href="mailto:lysenko.liudmila.a@gmail.com">lysenko.liudmila.a@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <span>Skype: </span>
+                                        <a data-href="skype:llysenko23?chat">llysenko23</a>
+                                    </li>
+                                </ul>
+                            </address>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contacts-form">
+                            <form name="contactForm" class="form-inline contacts-form">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <label for="name">Your Name</label>
+                                        <br/>
+                                        <input id="name" type="text" class="form-control contacts-form-control">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <label for="email">Email</label>
+                                        <br/>
+                                        <input id="email" type="email" class="form-control contacts-form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                        <label for="message">Text your message here</label>
+                                        <textarea id="message" class="contacts-form-control" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <button class="hvr-shutter-in-vertical my-btn">contact me</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="row footer text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <p class="text-uppercase">create by Mila Lysenko. All rights reserved </p>
+                <ul class="list-unstyled list-inline soc-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/milalysenko" target="_blank" tooltip-placement="top" uib-tooltip="Linkedin">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/MilaLys" target="_blank" tooltip-placement="top" uib-tooltip="GitHub">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/mila.lysenko.10" target="_blank" tooltip-placement="top" uib-tooltip="Facebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!-- Vendors -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="../scripts/main.js"></script>
+
+<script src="../scripts/Article.service.js"></script>
+<script src="../scripts/resume.controller.js"></script>
+<script src="../scripts/blog.module.js"></script>
+<script src="../scripts/blog.controller.js"></script>
+<script src="../scripts/article.module.js"></script>
+<script src="../scripts/article.controller.js"></script>
+</body>
+</html>

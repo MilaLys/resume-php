@@ -1,0 +1,111 @@
+<!-- Content -->
+<main id="blog">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Navigation -->
+            <nav class="menu" id="menu">
+                <ul class="list-unstyled text-center menu-items" role="tablist">
+                    <li>
+                        <a data-ui-sref="home">
+                            <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                            <div class="item-text text-uppercase">home</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-ng-click="vm.scrollTo('contacts')">
+                            <i class="fa fa-address-card-o fa-2x" aria-hidden="true"></i>
+                            <div class="item-text text-uppercase">contacts</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row parallax"></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-uppercase text-center">
+                        <strong>Hello, welcome to my blog!</strong>
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Split button -->
+                    <div class="pull-right sort-block">
+                        <div class="btn-group" uib-dropdown>
+                            <button id="sort" type="button" class="btn">Sort by</button>
+                            <button type="button" class="btn btn-caret" uib-dropdown-toggle>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="sort">
+                                <li role="menuitem"><a href="#">Action</a></li>
+                                <li role="menuitem"><a href="#">Another action</a></li>
+                                <li role="menuitem"><a href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" uib-dropdown>
+                            <button id="filter" type="button" class="btn">Filter by category</button>
+                            <button type="button" class="btn btn-caret" uib-dropdown-toggle>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="filter">
+                                <li role="menuitem"><input type="checkbox" value="Web"/>Web</li>
+                                <li role="menuitem"><input type="checkbox" value="Design"/>Design</li>
+                                <li role="menuitem"><input type="checkbox" value="Front-End"/>Front-End</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="article" data-ng-repeat="item in vm.blog">
+                        <div class="article-details">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                                    <div class="article-date text-center">
+                                        <div>{{ item.date }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+                                    <ul class="article-info list-unstyled list-inline">
+                                        <li tooltip-placement="top" uib-tooltip="Category">cat:
+                                            <span class="text-capitalize category">web, design</span>
+                                        </li>
+                                        <li tooltip-placement="top" uib-tooltip="Watched">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            {{ item.watched }}
+                                            <span class="hidden-xs">Watched</span>
+                                        </li>
+                                        <li tooltip-placement="top" uib-tooltip="Liked by">
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                            {{ item.liked }}
+                                            <span class="hidden-xs">Liked</span>
+                                        </li>
+                                    </ul>
+                                    <div class="article-description">
+                                        <h3>
+                                            <strong>{{ item.title }}</strong>
+                                        </h3>
+                                        <p>{{ item.description }}</p>
+                                        <a data-ui-sref="article({id: item.id})" class="text-capitalize">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <button class="hvr-shutter-in-vertical my-btn">load more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
