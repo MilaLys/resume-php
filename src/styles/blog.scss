@@ -65,6 +65,21 @@
                         font-size: 35px;
                     }
                 }
+                .article-text {
+                    .article-title {
+                        padding: 0 0 20px;
+                    }
+                    .description {
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    .subtitle {
+                        color: $light-green;
+                    }
+                    p {
+                        padding-bottom: 10px;
+                    }
+                }
                 .article-info {
                     padding-top: 40px;
                     color: $grey;

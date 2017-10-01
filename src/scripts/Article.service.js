@@ -38,7 +38,6 @@ angular
                 $http( {
                     method: 'GET',
                     url: 'article.php?id='+id,
-                    async: true,
                     headers: {
                         'Content-Type': 'application/json'
                     }

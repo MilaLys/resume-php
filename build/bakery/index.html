@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/themes/fontawesome-stars-o.min.css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" href="img/glass.svg" type="image/svg">
+
+    <title>Bakery</title>
+</head>
+<body>
+
+<!--NAVIGATION-->
+
+<nav class="navigation container-fluid">
+    <div class="nav-wrapper row">
+        <div class="col s2">
+            <a href="javascript:void(0)" class="brand-logo logo">Gustoso</a>
+            <a href="javascript:void(0)" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons" style="color: #fff;">menu</i>
+            </a>
+        </div>
+        <div class="col s8">
+            <ul id="nav-mobile" class="hide-on-med-and-down center-menu">
+                <li><a href="javascript:void(0)">welcome</a></li>
+                <li><a href="javascript:void(0)">menu</a></li>
+                <li><a href="javascript:void(0)">reservations</a></li>
+                <li><a href="javascript:void(0)">news</a></li>
+                <li><a href="javascript:void(0)">contact</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="javascript:void(0)">welcome</a></li>
+                <li><a href="javascript:void(0)">menu</a></li>
+                <li><a href="javascript:void(0)">reservations</a></li>
+                <li><a href="javascript:void(0)">news</a></li>
+                <li><a href="javascript:void(0)">contact</a></li>
+                <li class="soc-icons center-align">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col s2">
+            <ul class="right soc-icons hide-on-med-and-down">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="main-banner valign-wrapper">
+    <img src="img/main-banner.png" alt="main photo" class="zoom"/>
+    <div class="valign text">
+        <h1 class="center hide-on-small-only">Pastry with love</h1>
+        <div class="underline hide-on-small-only">
+            <img src="img/dashed-line.png"/>
+        </div>
+        <p class="hide-on-small-only">We’re bringing you fresh ingredients every day in ways you can’</p>
+        <button class="btn-menu">our menu</button>
+    </div>
+</div>
+
+<div class="first-section">
+    <div class="decoration">
+        <img src="img/decor.png"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l6 about-chief">
+                <h3 class="title">Art of Cakes</h3>
+                <p class="subtitle">we create delicious memories</p>
+                <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel auguQuisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu
+                    Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu
+                </p>
+                <h4 class="title">Chef Cook</h4>
+                <div class="chief row">
+                    <div class="col s4 m4 l4 chief-name center-align">Benito</div>
+                    <div class="chief-photo col s4 m4 l4">
+                        <div></div>
+                    </div>
+                    <div class="col s4 m4 l4 chief-name center-align">Gaspare</div>
+                </div>
+                <div class="quote">
+                    <p>Unique creations for unique occasions.Unique creations for unique occasions.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l6">
+                <div class="photo-container">
+                    <div class="photo-list clearfix">
+                        <div class="tastes center-align">Tastes so good!</div>
+                        <div class="photo-item">
+                            <img src="img/photo-1.png" alt="Gustoso"/>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/photo-2.png" alt="Gustoso"/>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/photo-3.png" alt="Gustoso"/>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/photo-4.png" alt="Gustoso"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--SECOND SECTION-->
+<div class="widget">
+    <div class="widget-wrapper row">
+        <div class="static-bg col l5 hide-on-small-only hide-on-med-only cutted-img">
+            <select id="example" class="rating">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+            </select>
+        </div>
+        <div class="dynamic-bg col l7">
+            <div class="text-content">
+                <h1>Tasty pancakes</h1>
+                <h5>season favourite</h5>
+                <p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus.</p>
+            </div>
+
+            <div class="carousel slider-wrapper">
+                <a class="icon-circle-left prev" href="javascript:void(0)"></a>
+                <a class="carousel-item rounded" href="#one!"><img class="js-slide" src="img/slide-1.jpg" alt="Gustoso"/></a>
+                <a class="carousel-item rounded" href="#two!"><img class="js-slide" src="img/slide-2.jpg" alt="Gustoso"/></a>
+                <a class="carousel-item rounded" href="#three!"><img class="js-slide" src="img/slide-3.jpg" alt="Gustoso"/></a>
+                <!-- <a class="carousel-item rounded" href="#four!"><img class="js-slide" src="img/photo-2.png" alt="Gustoso"/></a>
+                 <a class="carousel-item rounded" href="#five!"><img class="js-slide" src="img/photo-3.png" alt="Gustoso"/></a>-->
+                <a class="icon-circle-right next" href="javascript:void(0)"></a>
+            </div>
+
+            <!--<div class="move-btn hide-on-small-only hide-on-med-only">
+                <span class="icon-tab"></span>
+            </div>-->
+        </div>
+        <div class="time-in hide-on-small-only hide-on-med-only center-align">
+            <h5>ready in</h5>
+            <h1>40</h1>
+            <p>min</p>
+        </div>
+    </div>
+</div>
+
+<!-- THIRD SECTION -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col xl12 breakfast-block center-align">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col xl6 l5 m12 s12">
+                        <div class="menu">
+                            <h1>Breakfast</h1>
+                            <h5>7am breakfast? we're open!</h5>
+                            <ul class="menu-item">
+                                <li>
+                                    <h4>Full breakfast</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h3>$ 12.49</h3>
+                                </li>
+                                <li>
+                                    <h4>Toast & Jam</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h3>$ 4.90</h3>
+                                </li>
+                                <li>
+                                    <h4>Muffins</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h3>$ 3.95</h3>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col xl6 l7 m12 s12">
+                        <div class="breakfast-right">
+                            <div class="content-wrapper">
+                                <div class="multi-layers"></div>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <div class="col s6">
+                                                    <p class="info">est.</p>
+                                                </div>
+                                                <div class="col s6">
+                                                    <p class="info-date">1893</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="wrapper">
+                                                <svg class="hide-on-small-only">
+                                                    <path d="M 25 35 l 250 0" stroke="grey" stroke-width="1" fill="none"/>
+                                                    <!-- Mark relevant points -->
+                                                    <g stroke="grey" stroke-width="1" fill="none">
+                                                        <circle id="pointA" cx="15" cy="35" r="10"/>
+                                                        <circle id="pointC" cx="285" cy="35" r="10"/>
+                                                    </g>
+                                                    Sorry, your browser does not support inline SVG.
+                                                </svg>
+                                                <div class="circle"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <h3 class="title">Your morning Escape with Flair</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                        <div class="col s12">
+                                            <button class="button">read</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORTH SECTION -->
+        <div class="col xl12 forth-block">
+            <div class="row">
+                <div class="col s12">
+                    <h1 class="center-align title">The Jibarito sandwich</h1>
+                    <h5 class="center-align description">the best sandwich you've ever tasted!</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l4">
+                    <div class="components center-align">
+                        <ul>
+                            <li>
+                                <img src="img/slide-4.jpg" alt="" class="circle"/>
+                                <h5>Class aptent</h5>
+                                <p>Quot alienum persecuti ut eam, nam ad atqui primis nusquam.</p>
+                            </li>
+                            <li>
+                                <img src="img/slide-5.jpg" alt="" class="circle"/>
+                                <h5>Nulla eget</h5>
+                                <p>Nullam dictum felis eu pede mollis pretium Integer tincidunt.</p>
+                            </li>
+                            <li>
+                                <img src="img/slide-6.jpg" alt="" class="circle"/>
+                                <h5>Sed nibh purus</h5>
+                                <p> Aenean eleifend tellus leo ligula, porttitor eu, consequat vi.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col s12 m12 l8">
+                    <div class="recipe">
+                        <div class="info center-align">
+                            <ul class="info-item">
+                                <li>
+                                    <h5>prep</h5>
+                                    <h1>15</h1>
+                                    <p>mins</p>
+                                </li>
+                                <li>
+                                    <h5>cook</h5>
+                                    <h1>35</h1>
+                                    <p>mins</p>
+                                </li>
+                                <li>
+                                    <h5>ready in</h5>
+                                    <h1>50</h1>
+                                    <p>mins</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="button">full recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="col xl12 footer-menu-wrapper center-align">
+            <div class="row">
+                <div class="col s12 m12 l5 xl5">
+                    <div class="gradient">
+                        <ul class="menu">
+                            <li>
+                                <a>our menu</a>
+                            </li>
+                            <li>
+                                <a>gallery</a>
+                            </li>
+                            <li>
+                                <a>culture</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l2 xl2">
+                    <a href="javascript:void(0);" class="brand-logo logo">Gustoso</a>
+                </div>
+
+                <div class="col s12 m12 l5 xl5">
+                    <div class="gradient">
+                        <ul class="menu">
+                            <li>
+                                <a href="javascript:void(0)">events</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">catering</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">visit us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bar-rating/1.2.2/jquery.barrating.min.js"></script>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

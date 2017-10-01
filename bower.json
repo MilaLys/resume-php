@@ -22,9 +22,13 @@
     "angular-animate": "1.*",
     "angular-bootstrap": "2.*",
     "angular-ui-router": "1.*",
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "angular-sanitize": "^1.6.6"
   },
   "keywords": [
     "resume"
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.*"
+  }
 }
