@@ -19,8 +19,8 @@
 
 <div class="container-fluid">
     <div class="content">
-        <!-- CONTACTS -->
 
+        <!-- CONTACTS -->
         <div class="row bg-dark-grey">
             <section class="contacts" id="contacts">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -49,29 +49,47 @@
                                 </ul>
                             </address>
                         </div>
+
+                        <!-- Contact Form -->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contacts-form">
                             <form name="contactForm" class="form-inline contacts-form">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
                                         <label for="name">Your Name</label>
                                         <br/>
-                                        <input id="name" type="text" class="form-control contacts-form-control">
+                                        <input
+                                                id="name"
+                                                type="text"
+                                                class="form-control contacts-form-control"
+                                                data-ng-model="vm.name"
+                                        />
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
                                         <label for="email">Email</label>
                                         <br/>
-                                        <input id="email" type="email" class="form-control contacts-form-control">
+                                        <input
+                                                id="email"
+                                                type="email"
+                                                class="form-control contacts-form-control"
+                                                required="required"
+                                                data-ng-model="vm.email"
+                                                data-ng-pattern="'^.{3,}[@]{1}[A-Z,a-z]{2,}[\.]{1}[A-Z,a-z]{2,}$'"
+                                        />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                         <label for="message">Text your message here</label>
-                                        <textarea id="message" class="contacts-form-control" rows="6"></textarea>
+                                        <textarea
+                                                id="message"
+                                                class="contacts-form-control"
+                                                rows="6"
+                                                data-ng-model="vm.message"
+                                        ></textarea>
                                     </div>
                                 </div>
+                                <button class="hvr-shutter-in-vertical my-btn" data-ng-click="vm.sendMsg();">contact me</button>
                             </form>
-
-                            <button class="hvr-shutter-in-vertical my-btn">contact me</button>
                         </div>
                     </div>
                 </div>
@@ -122,5 +140,6 @@
 <script src="../scripts/blog.controller.js"></script>
 <script src="../scripts/article.module.js"></script>
 <script src="../scripts/article.controller.js"></script>
+<script src="../scripts/Message.service.js"></script>
 </body>
 </html>

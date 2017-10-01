@@ -2,7 +2,7 @@
 
 angular
     .module( 'resumeApp' )
-    .controller( 'ResumeController', [ '$scope', '$anchorScroll', '$http', 'ArticleService', function ( $scope, $anchorScroll, $http, ArticleService ) {
+    .controller( 'ResumeController', [ '$scope', '$anchorScroll', '$http', 'ArticleService', 'MessageService', function ( $scope, $anchorScroll, $http, ArticleService, MessageService ) {
         
         var vm = $scope.vm = {
             scrollTo: function ( id ) {
@@ -59,7 +59,17 @@ angular
                     icon: 'fa-globe',
                     content: [ 'English - Intermediate', 'Ukrainian, Russian - Native' ]
                 }
-            ]
+            ],
+            name: '',
+            email: '',
+            message: '',
+            sendMsg: function () {
+                MessageService
+                    .sendMessage( vm.name, vm.email, vm.message )
+                    .then( alert( 'Your message is successfully sent!' ) )
+                    .catch( function ( error ) {
+                    } );
+            }
         };
         
         $http( {

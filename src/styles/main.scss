@@ -29,9 +29,11 @@ p {
     color: $grey;
     padding-bottom: 40px;
 }
+
 a {
     cursor: pointer;
 }
+
 input[type="text"],
 input[type="email"],
 textarea {
@@ -86,10 +88,11 @@ textarea {
 }
 
 .hidden-xxs {
-    @media(max-width: 480px){
+    @media(max-width: 480px) {
         display: none;
     }
 }
+
 .menu {
     position: fixed;
     background-color: $dark-grey;
@@ -130,7 +133,7 @@ textarea {
             text-align: left;
         }
         .hidden-xxs {
-            @media(max-width: 480px){
+            @media(max-width: 480px) {
                 display: none;
             }
         }
@@ -238,7 +241,7 @@ section {
     .about-me {
         .about-me-block {
             padding: 0 40px;
-            @media(max-width: 480px){
+            @media(max-width: 480px) {
                 padding: 10px 0;
                 width: 100%;
             }
@@ -546,7 +549,23 @@ section {
             padding: 20px;
             color: $white;
             width: 100%;
+
         }
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        background: #4b5456;
+        -webkit-text-fill-color: $white;
+        -webkit-box-shadow: none;
+        transition: background-color 5000s ease-in-out 0s;
     }
 }
 
