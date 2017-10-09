@@ -12,6 +12,8 @@ $id = intval($_GET['id']);
 $query = $mysqli->query("SELECT * FROM `articles` WHERE `id`= $id");
 
 $row = $query->fetch_assoc();
-
+if (!empty($row)) {
+    $mysqli->query("UPDATE `articles` SET `watched` = `watched`+1 WHERE `id`= $id");
+}
 
 echo json_encode($row);

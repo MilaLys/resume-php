@@ -104,28 +104,26 @@ angular
                     }
 
                     function showAnimation() {
-                        var windowHeight = document.documentElement.clientHeight; // size of window visible part, 657
-                        var scroll = window.pageYOffset;
-
                         var element = document.getElementById( 'skills' );
-                        var elementTopPosition = getCoords( element );
+                        if ( element !== null ) {
+                            var elementTopPosition = getCoords( element );
+                            var windowHeight = document.documentElement.clientHeight; // size of window visible part, 657
+                            var scroll = window.pageYOffset;
+                            var progressBars = document.querySelectorAll( '.progress-bar' );
 
-                        var progressBars = document.querySelectorAll( '.progress-bar' );
+                            if ( (windowHeight + scroll) > elementTopPosition ) {
+                                angular.element( document ).find( progressBars ).addClass( 'animate' );
 
-                        if ( (windowHeight + scroll) > elementTopPosition ) {
-                            angular.element( document ).find( progressBars ).addClass( 'animate' );
-
-                            isAnimated = true;
-                        }
-
-                        function getCoords( elem ) {
-                            var box = elem.getBoundingClientRect();
-                            var top = box.top + pageYOffset;
-
-                            return top;
+                                isAnimated = true;
+                            }
                         }
                     }
+                    function getCoords( elem ) {
+                        var box = elem.getBoundingClientRect();
+                        var top = box.top + pageYOffset;
 
+                        return top;
+                    }
                     showAnimation();
                 };
 

@@ -21,7 +21,7 @@
             &:last-child {
                 margin-bottom: 50px;
             }
-            &:before { // TODO:doesn't work
+            &:before {
                 content: "";
                 position: absolute;
                 width: 100%;
