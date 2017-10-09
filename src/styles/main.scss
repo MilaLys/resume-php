@@ -52,6 +52,10 @@ textarea {
     }
 }
 
+.notice {
+    color: $light-green;
+}
+
 /* MENU */
 @-webkit-keyframes shake {
     from, to {
@@ -161,7 +165,6 @@ textarea {
 .my-btn {
     border: none;
     color: #fff;
-    text-transform: uppercase;
     padding: 10px;
     margin: 0 0 15px;
 }
@@ -359,6 +362,12 @@ section {
             .my-btn {
                 padding-left: 30px;
                 padding-right: 30px;
+                vertical-align: middle;
+                background: $dark-grey;
+                &:focus {
+                    outline: none;
+                    box-shadow: 0;
+                }
             }
         }
     }
@@ -425,7 +434,6 @@ section {
                 }
             }
         }
-
         .panel {
             margin-top: 0;
         }
@@ -588,6 +596,16 @@ section {
                 color: $white;
             }
         }
+    }
+}
+
+.animate {
+    animation: 2s my-animation ease-in-out;
+}
+
+@keyframes my-animation {
+    from {
+        width: 0;
     }
 }
 

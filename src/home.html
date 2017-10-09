@@ -127,7 +127,7 @@
                         <p>Here is some of my work. You can learn more about it if click on one of them.</p>
                         <ul class="list-unstyled list-inline portfolio-items">
                             <li class="portfolio-item"
-                                data-ng-repeat="item in vm.portfolio | limitTo:vm.limitPortfolio"
+                                data-ng-repeat="item in vm.portfolio"
                                 data-ng-style="{'background-image' : 'url(' + item.banner + ')'}"
                             >
                                 <div class="back animated zoomIn">
@@ -145,7 +145,7 @@
                                                 <span data-ng-bind="item.technologies"></span>
                                             </li>
                                         </ul>
-                                        <a class="hvr-shutter-in-vertical my-btn" data-ng-href="{{ item.url }}" target="_blank">Learn more</a>
+                                        <a class="hvr-shutter-in-vertical my-btn text-uppercase" data-ng-href="{{ item.url }}" target="_blank">Learn more</a>
                                     </div>
                                 </div>
                             </li>
@@ -155,10 +155,31 @@
                         <nav>
                             <ul class="pager">
                                 <li>
-                                    <button class="hvr-shutter-in-vertical my-btn">Prev</button>
+                                    <button
+                                            class="hvr-shutter-in-vertical my-btn text-uppercase"
+                                            data-ng-disabled="vm.currentPage <= 0"
+                                            data-ng-click="vm.portfolioPrevPage()"
+                                    >
+                                        Prev
+                                    </button>
                                 </li>
                                 <li>
-                                    <button class="hvr-shutter-in-vertical my-btn">Next</button>
+                                    <button
+                                            class="my-btn"
+                                            tooltip-placement="top"
+                                            uib-tooltip="Current page"
+                                    >
+                                        {{ vm.currentPage + 1 }} from {{ vm.portfolioPageCount }}
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                            class="hvr-shutter-in-vertical my-btn text-uppercase"
+                                            data-ng-disabled="vm.currentPage >= vm.portfolioPageCount - 1"
+                                            data-ng-click="vm.portfolioNextPage()"
+                                    >
+                                        Next
+                                    </button>
                                 </li>
                             </ul>
                         </nav>
@@ -174,7 +195,9 @@
                                     <strong>work experience</strong>
                                 </h3>
                                 <p>Because before I worked in other areas, here I show only relevant experience in IT-area.</p>
-                                <button class="hvr-shutter-in-vertical my-btn" onclick='window.open("https://www.linkedin.com/in/milalysenko", "_blank");'>view on linkedin</button>
+                                <button class="hvr-shutter-in-vertical my-btn text-uppercase" onclick='window.open("https://www.linkedin.com/in/milalysenko", "_blank");'>view on
+                                    linkedin
+                                </button>
                             </div>
                             <div class="col-lg-6">
                                 <div class="work-chronology-wrapper">
@@ -227,136 +250,32 @@
                                     <strong>my skills</strong>
                                 </h3>
                                 <p>This is just mine subjective opinion. Yours can be better or worse. If you want to see, please feel free to contact with me.</p>
-                                <button class="hvr-shutter-in-vertical my-btn" onclick="window.location.href='#contacts';">contact me</button>
+                                <button class="hvr-shutter-in-vertical my-btn text-uppercase" onclick="window.location.href='#contacts';">contact me</button>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class=" progress-bars">
-                                <form action="#">
-                                    <h4>HTML5</h4>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                    </div>
-                                    <h4>CSS3</h4>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                    </div>
-                                    <h4>Java Script</h4>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                    </div>
-                                    <h4>AngularJS 1</h4>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                    </div>
-                                </form>
+                                    <form action="#">
+                                        <h4>HTML5</h4>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                        </div>
+                                        <h4>CSS3</h4>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                        </div>
+                                        <h4>Java Script</h4>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                        </div>
+                                        <h4>AngularJS 1</h4>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                             <div class="panel panel-default">
-                                 <div class="panel-heading" role="tab" id="headingOne">
-                                     <h4 class="panel-title">
-                                         <i class="fa fa-desktop" aria-hidden="true"></i>
-                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                             CSS Preprocessors
-                                         </a>
-                                     </h4>
-                                 </div>
-                                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                     <div class="panel-body">
-                                         <ul class="collection">
-                                             <li class="collection-item">LESS</li>
-                                             <li class="collection-item">SASS</li>
-                                             <li class="collection-item">SCSS</li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="panel panel-default">
-                                 <div class="panel-heading" role="tab" id="headingTwo">
-                                     <h4 class="panel-title">
-                                         <i class="fa fa-book" aria-hidden="true"></i>
-                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                             CSS Libraries
-                                         </a>
-                                     </h4>
-                                 </div>
-                                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                     <div class="panel-body">
-                                         <ul class="collection">
-                                             <li class="collection-item">Bootstrap</li>
-                                             <li class="collection-item">Materialize</li>
-                                             <li class="collection-item">Bootstrap-material-design</li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="panel panel-default">
-                                 <div class="panel-heading" role="tab" id="headingThree">
-                                     <h4 class="panel-title">
-                                         <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                             JS Libraries &amp; Frameworks
-                                         </a>
-                                     </h4>
-                                 </div>
-                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                     <div class="panel-body">
-                                         <ul class="collection">
-                                             <li class="collection-item">jQuery</li>
-                                             <li class="collection-item">jQueryUI</li>
-                                             <li class="collection-item">Angular 1</li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="panel panel-default">
-                                 <div class="panel-heading" role="tab" id="toolsHeading">
-                                     <h4 class="panel-title">
-                                         <i class="fa fa-cogs" aria-hidden="true"></i>
-                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#toolsCollapse" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                             Apps &amp; Tools
-                                         </a>
-                                     </h4>
-                                 </div>
-                                 <div id="toolsCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                     <div class="panel-body">
-                                         <ul class="collection">
-                                             <li class="collection-item">VCS - SVN, GIT</li>
-                                             <li class="collection-item">Graphic editors - Adobe Photoshop, Adobe Illustartor, Avocode</li>
-                                             <li class="collection-item">IDE - Netbeans, phpStorm</li>
-                                             <li class="collection-item">The streaming build systems - Gulp, Grunt</li>
-                                             <li class="collection-item">Package managers - Bower, npm</li>
-                                             <li class="collection-item">Scaffolding tools - Yeoman</li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="panel panel-default">
-                                 <div class="panel-heading" role="tab" id="langHeading">
-                                     <h4 class="panel-title">
-                                         <i class="fa fa-globe" aria-hidden="true"></i>
-                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#langCollapse" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                             Languages
-                                         </a>
-                                     </h4>
-                                 </div>
-                                 <div id="langCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                     <div class="panel-body">
-                                         <ul class="collection">
-                                             <li class="collection-item">Russian - native</li>
-                                             <li class="collection-item">Ukrainian - native</li>
-                                             <li class="collection-item">English - intermediate</li>
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>-->
                         <uib-accordion close-others="oneAtATime">
                             <div uib-accordion-group class="panel-default" data-ng-repeat="group in vm.skills"><!--is-open="status.open"-->
                                 <uib-accordion-heading class="panel-title">
@@ -379,7 +298,7 @@
                                 <strong>resume</strong>
                             </h3>
                             <p>You can download my CV if you need, just press button below.</p>
-                            <button class="hvr-shutter-in-vertical my-btn" onclick='window.open("../images/cv.pdf", "_blank");'>download resume</button>
+                            <button class="hvr-shutter-in-vertical my-btn text-uppercase" onclick='window.open("../images/cv.pdf", "_blank");'>download resume</button>
                         </div>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </div>
@@ -462,7 +381,7 @@
                                     <p class="description">
                                         {{ item.description }}
                                     </p>
-                                    <button class="hvr-shutter-in-vertical my-btn" data-ui-sref="article({id: item.id})">read article</button>
+                                    <button class="hvr-shutter-in-vertical my-btn text-uppercase" data-ui-sref="article({id: item.id})">read article</button>
                                 </div>
                             </div>
                         </div>
