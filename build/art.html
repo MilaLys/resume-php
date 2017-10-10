@@ -1,0 +1,359 @@
+<h1 class="article-title">
+    <strong>Многоликость “this” в JavaScript</strong>
+</h1>
+<p class="description">В этом посте я сделаю всё возможное, чтобы объяснить одну из самых фундаментальных частей в JavaScipt – контекст вызова.</p>
+<p>
+    Если вы часто используете JS-фреймворки, понимание <mark class="key-word">this</mark> может показаться лишь приятным дополнением. Однако, если вы решили всерьез взяться за программирование, то
+    понимание контекста вызова является абсолютным и решающим фактором для того, чтобы быть JavaScript программистом.
+</p>
+<p>
+    Мы используем <mark class="key-word">this</mark> во многом также, как мы используем его в естественной речи - это, эта, этот. Мы предпочли бы написать «Моя мама посинела,
+   <u>это</u> очень тревожно», вместо «Моя
+    мама посинела. Моя мама, становящаяся синей, очень тревожит». Зная контекст <u>этого</u>, мы можем понять, что нас так беспокоит.
+</p>
+<p>
+    Давайте попробуем соединить это как-то с языком программирования. В JavaScript мы используем <mark class="key-word">this</mark> как сокращение, ссылку. Она ссылается на объекты, переменные и мы используем
+    это в контексте.
+</p>
+<p>
+    Это очень волнующе, но бояться нечего. Через минуту все станет ясно.
+</p>
+<h3 class="subtitle">Глобальный контекст</h3>
+<p>
+    О чём вы подумаете если кто-то скажет: «Это очень волнующе»? Без какой-либо видимой причины, просто в начале разговора, без контекста и введения. Скорее всего вы попытаетесь
+    найти связь с тем, что вас окружает или с тем, что происходило с вами в последнее время. Такая ситуация происходит с браузерами постоянно. Сотни тысяч разработчиков используют
+    <mark class="key-word">this</mark> без контекста. Наш бедный браузер делает всё возможное, чтобы понять <mark class="key-word">this</mark> применительно к глобальному объекту,
+    в данном конкретном примере к объекту <mark class="key-word">window</mark>.
+</p>
+<strong>Пример 1</strong>
+<pre>
+    <code>
+    var a = 15;
+    console.log(this.a);
+    // => 15
+    console.log(window.a);
+    // => 15
+    </code>
+</pre>
+<p>
+    Снаружи любой функции в глобальном контексте выполнения
+    <mark class="key-word">this</mark>
+    относится к глобальному контексту (объекту window).
+</p>
+<h3 class="subtitle">Контекст функции</h3>
+<p>
+    Снова обращаясь к примеру из реальной жизни контекст функции можно воспринимать как контекст предложения. «Моя мама посинела, это очень тревожно». Мы использовали «это»
+    (<mark class="key-word">this</mark>) в предложении, поэтому мы знаем, что «это» значит, но мы также можем использовать «это» и в других предложениях. Например, «Ураган приближается, это очень тревожно».
+    Тоже «это», но другой контекст и полностью другое значение.
+</p>
+<p>
+    Контекст в JavaScript связан с объектами. Он ссылается на объект внутри выполняемой функции. <mark class="key-word">this</mark> ссылается на объект, который выполняет функция.
+</p>
+<strong>Пример 1</strong>
+<pre>
+    <code>
+        var a = 20;
+
+        function gx () {
+            return this;
+        }
+
+        function fx () {
+            return this.a;
+        }
+
+        function fy () {
+            return window.a;
+        }
+
+        console.log(gx() === window);
+        // => True
+
+        console.log(fx());
+        // => 20
+
+        console.log(fy());
+        // => 20
+    </code>
+</pre>
+<p>
+    <mark class="key-word">this</mark> определяется тем, как вызывается функция. Как вы можете видеть все вышеупомянутые функции были вызваны в глобальном контексте.
+</p>
+<strong>Пример 2</strong>
+<pre>
+    <code>
+     var o = {
+         prop: 37,
+         f: function() {
+              return this.prop;
+         }
+     };
+
+     console.log(o.f());
+     // => 37
+    </code>
+</pre>
+<p>
+    Когда функция вызвана как метод объекта, <mark class="key-word">this</mark> устанавливается на объект, метод которого был вызван.
+</p>
+<strong>Пример 3</strong>
+<pre>
+    <code>
+        function fx () {
+            return this;
+        }
+
+        var obj = {
+            method: function () {
+                return this;
+            }
+        };
+
+        var x_obj = {
+                y_obj: {
+                    method: function () {
+                        return this;
+                    }
+                }
+        };
+
+        console.log(fx() === window);
+        // => True (мы до сих пор в глобальном контексте)
+
+        console.log(obj.method() === window);
+        // => False (функция вызвана как метод объекта)
+
+        console.log(obj.method() === obj);
+        // => True (функция вызвана как метод объекта)
+
+        console.log(x_obj.y_obj.method() === x_obj)
+        // => False (функция вызвана как метод объекта y_obj, таким образом <mark class="key-word">this</mark> является её контекстом)
+    </code>
+</pre>
+<strong>Пример 4</strong>
+<pre>
+    <code>
+        function f2 () {
+          'use strict';
+           return this;
+        }
+
+        console.log(f2() === undefined);
+        // => True
+    </code>
+</pre>
+<p>
+    В строгом режиме (<mark class="key-word">'use strict'</mark>) правила другие. Контекст остается таким, каким он был установлен. В этом конкретном примере
+    <mark class="key-word">this</mark> не был определен, поэтому контекст вызова остается <mark class="key-word">undefined</mark>.
+</p>
+<strong>Пример 5</strong>
+<pre>
+    <code>
+        function fx () {
+            return this;
+        }
+
+        var obj = {
+            method: fx
+        };
+
+        console.log(obj.method() === window);
+        // => False
+
+        console.log(obj.method() === obj);
+        // => True
+    </code>
+</pre>
+<p>
+    Как и в предыдущем примере, функция вызывается как метод объекта, независимо от того, как он был определен.
+</p>
+<strong>Пример 6</strong>
+<pre>
+    <code>
+        var obj = {
+            method: function () {
+                return this;
+            }
+        };
+
+        var sec_obj = {
+            method: obj.method
+        };
+
+        console.log(sec_obj.method() === obj);
+        // => False
+
+        console.log(sec_obj.method() === sec_obj);
+        // => True
+    </code>
+</pre>
+<p><mark class="key-word">this</mark> динамически меняется, это значит, что он может меняться от одного объекта к другому.</p>
+<strong>Пример 7</strong>
+<pre>
+    <code>
+        var shop = {
+              fruit: "Apple",
+              sellMe: function() {
+                console.log("this ", this.fruit);
+                // => this Apple
+
+                console.log("shop ", shop.fruit);
+                // => shop Apple
+              }
+        }
+
+        shop.sellMe();
+    </code>
+</pre>
+<p>
+    Мы можем обратиться к фрукту используя <mark class="key-word">this</mark> или по имени объекта.
+</p>
+<strong>Пример 8</strong>
+<pre>
+    <code>
+        var Foo = function () {
+            this.bar = "baz";
+        };
+
+        var foo = new Foo();
+
+        console.log(foo.bar);
+        // => baz
+
+        console.log(window.bar);
+        // => undefined
+    </code>
+</pre>
+<p>Таким образом мы видим, что ключевое слово <mark class="key-word">new</mark> меняет правила. Оператор <mark class="key-word">new</mark> создает экземпляр объекта. Контекст функции будет установлен на созданный экземпляр объекта.</p>
+<h3 class="subtitle">Call, apply, bind</h3>
+<p>Реальный пример: «Это очень беспокоит, тот факт, что моя мама посинела».</p>
+<p>Эти методы позволяют нам выполнять любую функцию в любом желаемом контексте. Посмотрим, как они работают, на примерах.</p>
+<strong>Пример 1</strong>
+<pre>
+    <code>
+        var bar = "xo xo";
+
+        var foo = {
+            bar: "lorem ipsum"
+        };
+
+        function test () {
+            return this.bar;
+        }
+
+        console.log(test());
+        // => xo xo
+
+        console.log(test.call(foo));
+        // => lorem ipsum
+
+        console.log(test.apply(foo));
+        // => lorem ipsum
+    </code>
+</pre>
+<ul class="list-unstyled">
+    <li>xo xo – вызываем test() в глобальном контексте</li>
+    <li>lorem ipsum – используя <mark class="key-word">call()</mark> мы вызываем test() в контексте объекта foo</li>
+    <li>lorem ipsum – используя <mark class="key-word">apply()</mark> мы также как и при использовании метода <mark class="key-word">call()</mark> вызываем test() в контексте объекта foo</li>
+</ul>
+<p>Эти два метода позволяют выполнить функцию в любом желаемом контексте.</p>
+<p><mark class="key-word">apply()</mark> позволяет вызвать функцию с аргументами в виде массива, в том случае если вызов требует явного указания параметров.</p>
+<strong>Пример 2</strong>
+<pre>
+    <code>
+        var a = 5;
+
+        function test () {
+            return this.a;
+        }
+
+        var bound = test.bind(document);
+
+        console.log(bound());
+        // => undefined (в объекте document нет переменной a)
+
+        console.log(bound.call(window));
+        // => undefined (в объекте document нет переменной a, в данной ситуации <mark class="key-word">call()</mark> не может изменить контекст)
+
+        var sec_bound = test.bind({a: 15})
+
+        console.log(sec_bound())
+        // => 15 (мы создали новый объект {a:15} и вызвали test() в контексте данного объекта)
+    </code>
+</pre>
+<p>Метод <mark class="key-word">bind()</mark> перманентно устанавливает контекст в предусмотренное значение.</p>
+<p>После использования <mark class="key-word">bind()</mark> <mark class="key-word">this</mark> становится неизменяемым, даже если мы будем использовать <mark class="key-word">apply()</mark>,
+    <mark class="key-word">call()</mark> или <mark class="key-word">bind()</mark>.
+</p>
+<h3 class="subtitle">Стрелочные функции ES6 (Arrow functions)</h3>
+<p>Стрелочные функции были введены как часть ES6. Их можно рассматривать как очень удобный инструмент. Однако,  вы должны знать, что стрелочные функции работают иначе, чем обычные
+    функции с точки зрения контекста. Давайте посмотрим.
+</p>
+<strong>Пример 1</strong>
+<pre>
+    <code>
+        var foo = (() => this);
+
+        console.log(foo() === window);
+        // => True
+    </code>
+</pre>
+<p>Когда мы используем стрелочные функции, <mark class="key-word">this</mark> хранит значение внешнего лексического контекста.</p>
+<strong>Пример 2</strong>
+<pre>
+    <code>
+        var obj = {method: () => this};
+
+        var sec_obj = {
+            method: function() {
+                return this;
+            }
+        };
+
+        console.log(obj.method() === obj);
+        // => False
+
+        console.log(obj.method() === window);
+        // => True
+
+        console.log(sec_obj.method() === sec_obj);
+        // => True
+    </code>
+</pre>
+<p>
+    Обратите внимание на разницу между стрелочной и обычной функцией. Со стрелочной функцией мы находимся в контексте объекта window.
+    Можно сказать, что:
+</p>
+<code>x => this.y equals function (x) { return this.y }.bind(this)</code>
+<p>Стрелочная функция всегда имеет значение <mark class="key-word">this</mark> и поэтому не может использоваться как конструктор. Этот последний пример иллюстрирует разницу.</p>
+<strong>Пример 3</strong>
+<pre>
+    <code>
+        var a = "global";
+
+        var obj = {
+            method: function () {
+                return {
+                    a: "inside method",
+                    normal: function() {
+                        return this.a;
+                    },
+                    arrowFunction: () => this.a
+                };
+            },
+            a: "inside obj"
+        };
+
+        console.log(obj.method().normal());
+        // => inside method
+
+        console.log(obj.method().arrowFunction());
+        // => inside obj
+    </code>
+</pre>
+<p>
+    Если вы знаете разницу между динамическим и лексическим <mark class="key-word">this</mark> функции, подумайте дважды прежде чем объявлять новую функцию. Если она вызывается как метод, используйте
+    динамический <mark class="key-word">this</mark>. Если она вызывается в качестве подпрограммы, используйте лексический <mark class="key-word">this</mark>.</p>
+<p>Оригинал статьи на английском языке вы можете прочесть перейдя по этой
+<a data-ng-href=”https://blog.pragmatists.com/the-many-faces-of-this-in-javascript-5f8be40df52e” target="_blank">ссылке.</a>
+</p>
