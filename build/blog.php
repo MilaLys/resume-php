@@ -7,7 +7,7 @@
  */
 
 $mysqli = new mysqli("localhost", "root", "root", "resume");
-$query = $mysqli->query("SELECT * FROM `articles` ORDER BY `date`");
+$query = $mysqli->query("SELECT * FROM `articles` ORDER BY `date` DESC");
 
 $data = [];
 while ($row = $query->fetch_assoc()) {

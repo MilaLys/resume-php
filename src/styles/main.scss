@@ -242,21 +242,41 @@ section {
 
     /* About me */
     .about-me {
-        .about-me-block {
-            padding: 0 40px;
-            @media(max-width: 480px) {
-                padding: 10px 0;
-                width: 100%;
+        background: url(../images/kharkov.jpg) 50% 50% no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        h3 {
+            color: $light-grey;
+        }
+        .about-content {
+            background-color: rgba(37, 46, 48, .9);
+            border: 1px solid $medium-grey;
+            padding: 20px;
+            .about-me-block {
+                ul {
+                    padding-top: 15px;
+                    border-bottom: 1px dashed $medium-grey;
+                }
+                h5 {
+                    color: $light-grey;
+                }
+                a {
+                    color: $grey;
+                }
+                i {
+                    color: $light-green;
+                    font-size: 15px;
+                }
+                p {
+                    padding-bottom: 10px;
+                }
             }
-            a {
-                color: $grey;
-            }
-            i {
-                color: $light-green;
-                font-size: 20px;
+            .about-me-block:last-child  {
+                ul {
+                    border-bottom: none;
+                }
             }
         }
-
     }
 
     /* Portfolio */

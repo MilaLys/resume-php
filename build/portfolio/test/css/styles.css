@@ -1,0 +1,116 @@
+/*---Global Reset---*/
+
+/*---Custom Reset---*/
+* {outline:none;}
+h1,h2,h3,h4{margin: 0;}
+a:hover, a:visited, a:active, a:focus {text-decoration: none;outline:none;}
+.btn{border-radius: 0;}
+
+/*---Global styles---*/
+body{position: relative;}
+
+/*-Fonts-*/
+@font-face{font-family: Montserrat-regular;src: url(../fonts/Montserrat/Montserrat-Regular.ttf);}
+@font-face{font-family: Open-Sans-regular; src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);}
+
+/*-Typography-*/
+p{color:#616161;font-family: Open-Sans-regular, Arial, Helvetica, sans-serif;font-size: 16px;}
+h1,h2,h3,h4{color: #212121;font-family: Montserrat-regular, Arial, Helvetica, sans-serif; }
+
+/*-Buttons-*/
+.btn-custom {background-color: transparent;border: 1px solid #212121;color:#212121;padding: 10px 36px;}
+.btn-custom:hover{background-color: #212121;color:#ffffff;}
+.btn-custom:focus,.btn-custom:active{outline:none;box-shadow:none;}
+.btn-custom.btn-orange {border: 1px solid #ff6e40;color:#ffffff;}
+.btn-custom.btn-orange:hover{background: #ff6e40;}
+
+.title-caption {color:#bdbdbd;font-family: Montserrat-regular, Arial, Helvetica, sans-serif;font-size: 17px;margin: 0;}
+
+/*---Header---*/
+.header{background-color: #ffffff;padding: 17px 30px;position: fixed;width: 100%;height:73px;z-index: 3;}
+.header .logo {font-size:34px;}
+.header .logo > span {display: inline-block;width: 40px;height: 40px;border:2px solid #616161;}
+.header nav {padding: 9px 16px 0 0;}
+.header .mobile {padding: 0;}
+.header nav > a {font-family:Montserrat-regular, Arial, Helvetica, sans-serif;font-size:17px;color:#616161;padding: 0 0 0 15px;}
+.header nav > a:hover, .header nav > a:focus,.header nav > a:active{color:#ff6e40;}
+
+/*-Slider-*/
+.slider{margin: 73px 0 0;position: relative;height:500px;width: 100%;overflow: hidden; }
+.slider .prev,.slider .next{z-index:1;position: absolute;top: 46%;width:40px;height:40px;border:1px solid #ff6e40;font-size:18px;color:#ffffff;cursor:pointer;text-align: center;line-height: 40px;}
+.slider .prev:hover,.slider .next:hover{background: #ff6e40;}
+.slider .prev{left: 1%;}
+.slider .next{right:1%;}
+.slider ul li{position: relative;display:none;width:100%;}
+.slider .current{position: absolute;top:0;display:block;}
+.slider .slider-content {position:absolute;top: 49%;left:50%;transform: translate(-50%,-50%);}
+.slider .slider-content .title{font-size:42px;color:#ffffff;padding: 0 0 20px;}
+.slider .slider-content p {color:#ffffff;font-size: 26px;margin: 0 0 35px;}
+.slider .btn-custom {font-size:19px;}
+
+/*---Main Content---*/
+/*-About-*/
+.about {padding: 94px 10px 100px;}
+.about .title{padding: 0 0 25px;}
+.about .text{padding: 0 0 16px;}
+.about .btn-custom {padding: 15px 50px;}
+
+/*-Services-*/
+.services{padding: 94px 34px 60px;background: #f5f5f5;}
+.services .title{padding: 0 0 32px;}
+.services .services-item{height:80px;overflow: hidden;margin: 0 0 40px;}
+.services .services-item p{line-height: 20px;}
+.services .services-item .subtitle{font-size:19px;margin: 0 0 4px;}
+.services .services-item .services-icon{width:80px;height:80px;border: 3px solid #ff6e40;border-radius: 4px; color:#ff6e40;position: relative;margin: 0 20px 0 0;}
+.services .services-item .services-icon:before{position: absolute;left:-10%;top:-10%;width:90px;height:90px;transform: rotate(45deg);content:'';background: #f5f5f5;}
+.services .services-item .services-icon>i{padding: 17px 0 0;font-size: 47px;position: relative;}
+
+/*-Subscribe-*/
+.subscribe{background:  #424242;padding: 31px 60px 31px 39px;}
+.subscribe .title{color:#ffffff;padding: 11px 0 0;}
+.subscribe p {color:#bdbdbd;}
+.subscribe .btn-custom{padding: 15px 80px;margin: 10px 0 0;}
+
+/*-Gallery-*/
+.gallery{padding: 94px 34px 80px;}
+.gallery .title{padding: 0 0 32px;}
+.gallery .item{width:380px;height:380px;background: #bdbdbd;position: relative;overflow: hidden;padding: 0;margin: 5px;}
+.gallery .item>img{min-height: 100%;}
+.gallery .item .item-back{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.7);display: none;}
+.gallery .item:hover .item-back{display:block;}
+.gallery .item .item-back .content{position: relative;height:100%;}
+.gallery .item .item-back .content .link{height:70%;position:relative;}
+.gallery .item .item-back .content .link>a{display:inline-block;width:60px;height:60px;background: #ff6e40;position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.gallery .item .item-back .content .link>a>i{color:#ffffff;padding: 15px 0 0;}
+.gallery .item .item-back .content .info{height:30%;background: #f5f5f5;position: absolute;bottom:0;width: 100%;padding: 32px 0 0;overflow: hidden;}
+.gallery .item .item-back .content .info h3 {color:#ff6e40;}
+.gallery .item .item-back .content .info p {color:#616161;}
+
+/*-Contacts-*/
+.contacts{background: #f5f5f5;padding: 39px 30px 14px;font-size: 16px;}
+.contacts .address-item {display:table;padding: 0 0 5px;}
+.contacts .address-item .address-marker {display: table-cell;width:60px;height:60px;background: #ff6e40;color: #ffffff;padding: 13px 0 0;margin: 0 10px 0 0;}
+.contacts .address-item .address-info{display: table-cell;vertical-align: middle;color:#616161;}
+.contacts .address-item .address-info a{color:#616161;}
+
+/*-Map-*/
+.map{height: 400px;position: relative;}
+
+/*---Footer---*/
+.footer{padding: 22px 30px;color:#616161;}
+.footer .soc-links{text-align: center;}
+.footer .soc-links a{color:#bdbdbd;padding: 0 4px;}
+.footer .soc-links a>i{font-size:16px;}
+.footer .soc-links a>i:hover,.footer .links a:hover{color:#ff6e40;}
+.footer .links a{color:#616161;padding: 0 10px;}
+.footer .links li:first-child{position: relative;}
+.footer .links li:first-child:after{position: absolute;content: '|';right:0;top:0;color:#ff6e40;}
+
+.btn-up{width:40px;height:40px;position: absolute;right:28px;bottom:95px;padding: 0;}
+.btn-up:hover i{background: #ff6e40;color:#ffffff;}
+.btn-up>i{color:#ff6e40;font-size: 18px;}
+
+
+@media (max-width: 768px) { .footer{text-align:center;}.footer .soc-links{text-align:center; padding: 15px 0 0;}.footer .links{text-align: center;}}
+@media (max-width: 768px) { .slider .slider-content{width:100%;}}
+
